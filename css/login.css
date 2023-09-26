@@ -1,0 +1,156 @@
+:root {
+  --neon-color:#a5f1e9;
+  --white-color:#fff;
+  --main-bacco:#051527;
+  --light-bacco:#0a2647;
+}
+
+main {
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner {
+  min-height: 20vw;
+  width: 100%;
+  background-image: url("../images/login.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50vw;
+  height: 50vh;
+  min-height: 500px;
+  background: transparent;
+  border: 4px solid whitesmoke;
+  border-radius: 15px;
+  transition: 0.5s;
+  margin: 50px;
+}
+.wrapper:hover {
+  border: 4px solid #00ffd1;
+  box-shadow: 0 0 20px #00ffd1;
+  box-shadow-box-shadow: inset 0px 0px 20px #31c6d4;
+}
+.wrapper:hover h2 {
+  color: #00ffd1;
+  transition: 0.5s;
+}
+.wrapper:hover .input-box input {
+  border: 2px solid #7cbd28;
+  box-shadow: inset 0 0 20px #7cbd28;
+  box-shadow: 0 0 20px #7cbd28;
+}
+.wrapper:hover button {
+  background-color: #f01b1b;
+  transition: 0.5s;
+}
+.wrapper:hover .registration-link p a {
+  color: #f01b1b;
+  transition: 0.5s;
+}
+.wrapper:hover .input-box .icon i {
+  color: #00ffd1;
+}
+
+h2 {
+  font-size: 4rem;
+  color: var(--white-color);
+  text-align: center;
+  transition: 0.5s;
+}
+
+.input-box {
+  position: relative;
+  width: 100%;
+  margin: 30px 0;
+}
+.input-box .icon {
+  color: #fff;
+  position: absolute;
+  left: 15px;
+  top: 15px;
+}
+.input-box input {
+  width: 600px;
+  height: 50px;
+  border-radius: 7px;
+  background-color: transparent;
+  border: 2px solid var(--light-bacco);
+  outline: none;
+  font-size: 1.5rem;
+  color: var(--white-color);
+  padding: 0 10px 0 40px;
+  transition: 0.5s;
+}
+.input-box input::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+.input-box input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.forgot-password a {
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: #fff;
+}
+
+button {
+  width: 100%;
+  padding: 10px 0px;
+  margin: 20px 0;
+  font-size: 2rem;
+  color: #fff;
+  background-color: #0a2647;
+  border: none;
+}
+button:hover {
+  cursor: pointer;
+}
+
+.registration-link {
+  text-align: center;
+}
+.registration-link p {
+  color: #fff;
+  font-size: 1.5rem;
+}
+.registration-link p a {
+  text-decoration: none;
+  color: #0a2647;
+}
+
+@media screen and (max-width: 1024px) {
+  .wrapper h2 {
+    font-size: 3rem;
+  }
+  .input-box input {
+    width: 40vw;
+  }
+}
+@media screen and (max-width: 550px) {
+  .wrapper h2 {
+    font-size: 2.5rem;
+  }
+  form .input-box {
+    margin: 20px 30px;
+  }
+  form .forgot-password {
+    margin: 20px 30px;
+  }
+  form .registration-link {
+    margin: 20px 30px;
+  }
+  button {
+    width: 80%;
+    margin: 0px 30px;
+  }
+}

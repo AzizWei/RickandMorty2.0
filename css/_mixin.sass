@@ -1,0 +1,21 @@
+:root
+    --main-color:#40b5cb
+    --sec-color:#62b138
+
+
+= size($w,$h:$w,$bdrs:0)
+    width: $w
+    height: $h
+    border-radius: $bdrs
+
+=flex($jc:center,$ai:center,$fd:row)
+    display: flex
+    flex-wrap: wrap
+    justify-content: $jc
+    align-items: $ai
+    flex-direction: $fd
+
+=consleDec
+    background: #38567b
+    border: 3px solid #000
+    box-shadow: inset -1px 1px 5px  rgba(white,0.5)

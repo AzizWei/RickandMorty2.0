@@ -1,0 +1,328 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap')
+@import "_mixin"
+
+
+
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+    font-family: 'Bebas Neue', cursive
+    text-decoration: none
+    list-style: none
+    // border: 1px solid #f00
+
+body,html
+    width: 100%
+    max-width: 100%
+    background: #ddd
+
+h1,h2,h3,h4,h5,h6
+    font-weight: 400
+
+header
+    +flex(space-evenly)
+    position: sticky
+    top: 0
+    z-index: 5
+    background-color: black
+    .logo
+        margin-left: 2rem
+        flex: 4
+        img
+            width: 8rem
+    
+    nav
+        +flex
+        .menu
+            color: var(--main-color)
+            font-size: 2.2rem
+            cursor: pointer
+            margin-right: 2rem
+            // display: none
+        ul
+            +flex(space-around)
+            li
+                a
+                    +size(10rem,4vw)
+                    display: block
+                    font-size: 2rem
+                    line-height:4vw
+                    color: var(--main-color)
+                    text-align: center
+                    font-weight: bolder
+        
+                &:hover
+                    background: white
+                    a
+                        color: #000
+
+
+main
+    +flex(center,center,column)
+
+section.backImage
+    min-height: 80vh
+    width: 100%
+    background-image: url('../images/rick-and-morty.jpg')
+    background-size: cover
+    background-position: center
+    position: relative
+    z-index: 0
+
+    .filter
+        +flex(center,center,column)
+        background-color: rgba(black,0.5)
+        width: 100%
+        min-height: 100%
+        position: absolute
+        top: 0
+        z-index: -1
+        opacity: 0
+        overflow: hidden
+        
+        &:hover
+            opacity:1
+            transition: .5s 
+
+
+        h1
+            font-size: 2rem
+            color: white
+            border: .5rem solid var(--main-color)
+            background-color: #000
+            padding: 10px 30px 
+
+        button.btn
+            color: white
+            background-color: #000
+            padding: 10px 30px
+            font-size: 2rem
+            cursor: pointer
+            margin: 100px auto
+            border: .5rem solid var(--main-color)
+
+            &:hover
+                border: .5rem solid white
+
+section.second
+    width: 100%
+    +flex(center,center,column)
+    text-align: center
+    margin:
+        top: 2rem
+    .wrap
+        width: 100%
+        h1
+            font-size: 3rem
+            color: var(--main-color)
+
+        h2
+            font-size: 2rem
+            margin: 1rem 0rem
+            color: #000
+        span
+            color: var(--main-color)
+        iframe
+            width: 70%
+            height: 60vh
+
+#slides
+    width: 100%
+    overflow: hidden
+
+    swiper-container 
+      width: 100%
+      padding-top: 50px
+      padding-bottom: 50px
+    
+    swiper-slide 
+      background-position: center
+      background-size: cover
+      width: 500px
+    img
+        display: block
+        width: 100%
+
+#vedio2
+    display: none    
+
+section.d-pocketmorty
+    +flex
+    +size(80%,500px,0.3rem)
+    margin: 
+        top: 2rem
+        bottom: 5rem
+    position: relative
+    // box-shadow: inset -5px -5px 10px rgba(black,0.5),0 0 5px rgba(black,0.5)
+    .gameConsole
+        clip-path: polygon(10% 0, 95% 0, 100% 10%, 100% 90%, 95% 100%, 0 100%, 0 20%)
+        background-color: #c1bab4
+        +size(100%)
+        position: relative
+        .body
+            +size(90%,100%)
+            background: linear-gradient(45deg,#a2979b,#72696d)
+            position: relative
+            left: 10%
+            .screen
+                +size(85%,80%)
+                border: 5px solid #e7e2e5 
+                position: relative
+                left: 2%
+                top: 10%
+                iframe
+                    +size(100%)
+            .decoration
+                +size(8%,3%,30%)
+                position: relative
+                left: 90%
+                top: -20%
+                background: #413b37
+                border: 2px solid #000
+                margin: 
+                    top:5px 
+                &::before
+                    content: ""
+                    display: block
+                    +size(100%,100%,30%)
+                    background: #413b37
+                    border: 2px solid #000
+                    margin: 
+                        top:-350%
+
+    .leftDec
+        +size(10%,40%,5px)
+        +flex(center,start,column)   
+        border: 3px solid #000
+        background: #38567b
+        position: absolute
+        left: -1%
+        bottom: -1%
+        .line
+            +size(80%,15%)
+            background: #16457b
+            border: 3px solid #000
+            border-left: 0px
+            border-top-right-radius: 10px
+            border-bottom-right-radius: 10px
+            margin-top: 6px
+            box-shadow: inset -1px 1px 5px  rgba(white,0.5)
+        &::before
+            content: ""
+            display: block
+            +size(60%,50%)
+            +consleDec
+            border-top-right-radius: 10px
+            border-bottom-right-radius: 10px
+            position: absolute
+            top: -90%
+            left: -1%
+    
+    .bottomDec
+        position: absolute
+        bottom: -2%
+        +size(20%,5%)
+        +consleDec
+        border-bottom-left-radius: 10px
+        border-bottom-right-radius: 10px
+        &::after
+            content: ""
+            display: block
+            +size(50%,100%)
+            +consleDec
+            position: absolute
+            left: 150%
+            bottom: -2%
+            border-bottom-left-radius: 10px
+            border-bottom-right-radius: 10px
+
+.download
+    text-align: center
+    margin-bottom: 50px
+
+    h1
+        font-size: 3rem
+        color: var(--main-color)
+    h2  
+        font-size:2rem
+         
+    .appstore
+        
+        .downloadpic
+            width: 15%
+            margin: 1rem
+    
+            &:hover
+                transform: scale(1.2)
+    
+
+
+
+footer
+    +flex(space-evenly)
+    max-height: 60vh
+    background-color: black
+    border-top:1px solid white
+    padding:20px
+    .wrap
+        +flex(center,center,column)
+        img
+            width: 5vw
+            height: 5vw
+            margin: 10px 20px
+        h1
+            color: #fff
+            font-size: 2.5rem
+        p
+            font-size: 20px
+            color: #fff
+        nav
+                width: 30%
+                text-align: center
+
+                ul
+                    display: flex
+                    flex-direction: column
+                    width: 100%
+                    justify-content: space-around
+                    flex-wrap: wrap
+                    li
+                        a
+                            color: white
+                            font-weight: 600
+                            font-size: 2rem
+                            flex-basis: 100px
+            
+        
+    
+
+        .bigpic
+            width: 20vw
+            height: 20vw
+            background-image: url("../images/R_M_logo.png")
+            background-position: center
+            background-size: cover
+        .links
+            display: flex
+            flex-direction: column
+            align-items: center
+            margin-top: 30px
+            .wrap
+                display: flex
+                flex-direction: row
+                margin-top: 20px
+                p
+                    font-size: 50px
+                    color: #FFF
+                    margin: 5px
+    
+                img
+                    max-width: 2vw
+                    min-width: 35px
+                    max-height: 2vw
+                    min-height: 35px
+    
+
+
+

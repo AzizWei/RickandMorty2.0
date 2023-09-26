@@ -1,0 +1,421 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+:root {
+  --main-color:#40b5cb;
+  --sec-color:#62b138;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Bebas Neue", cursive;
+  text-decoration: none;
+  list-style: none;
+}
+
+body, html {
+  width: 100%;
+  max-width: 100%;
+  background: #ddd;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
+}
+
+header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background-color: black;
+}
+header .logo {
+  margin-left: 2rem;
+  flex: 4;
+}
+header .logo img {
+  width: 8rem;
+}
+header nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+header nav .menu {
+  color: var(--main-color);
+  font-size: 2.2rem;
+  cursor: pointer;
+  margin-right: 2rem;
+}
+header nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+}
+header nav ul li a {
+  width: 10rem;
+  height: 4vw;
+  border-radius: 0;
+  display: block;
+  font-size: 2rem;
+  line-height: 4vw;
+  color: var(--main-color);
+  text-align: center;
+  font-weight: bolder;
+}
+header nav ul li:hover {
+  background: white;
+}
+header nav ul li:hover a {
+  color: #000;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+section.backImage {
+  min-height: 80vh;
+  width: 100%;
+  background-image: url("../images/rick-and-morty.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 0;
+}
+section.backImage .filter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  min-height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  opacity: 0;
+  overflow: hidden;
+}
+section.backImage .filter:hover {
+  opacity: 1;
+  transition: 0.5s;
+}
+section.backImage .filter h1 {
+  font-size: 2rem;
+  color: white;
+  border: 0.5rem solid var(--main-color);
+  background-color: #000;
+  padding: 10px 30px;
+}
+section.backImage .filter button.btn {
+  color: white;
+  background-color: #000;
+  padding: 10px 30px;
+  font-size: 2rem;
+  cursor: pointer;
+  margin: 100px auto;
+  border: 0.5rem solid var(--main-color);
+}
+section.backImage .filter button.btn:hover {
+  border: 0.5rem solid white;
+}
+
+section.second {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 2rem;
+}
+section.second .wrap {
+  width: 100%;
+}
+section.second .wrap h1 {
+  font-size: 3rem;
+  color: var(--main-color);
+}
+section.second .wrap h2 {
+  font-size: 2rem;
+  margin: 1rem 0rem;
+  color: #000;
+}
+section.second .wrap span {
+  color: var(--main-color);
+}
+section.second .wrap iframe {
+  width: 70%;
+  height: 60vh;
+}
+
+#slides {
+  width: 100%;
+  overflow: hidden;
+}
+#slides swiper-container {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+#slides swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 500px;
+}
+#slides img {
+  display: block;
+  width: 100%;
+}
+
+#vedio2 {
+  display: none;
+}
+
+section.d-pocketmorty {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 80%;
+  height: 500px;
+  border-radius: 0.3rem;
+  margin-top: 2rem;
+  margin-bottom: 5rem;
+  position: relative;
+}
+section.d-pocketmorty .gameConsole {
+  -webkit-clip-path: polygon(10% 0, 95% 0, 100% 10%, 100% 90%, 95% 100%, 0 100%, 0 20%);
+          clip-path: polygon(10% 0, 95% 0, 100% 10%, 100% 90%, 95% 100%, 0 100%, 0 20%);
+  background-color: #c1bab4;
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  position: relative;
+}
+section.d-pocketmorty .gameConsole .body {
+  width: 90%;
+  height: 100%;
+  border-radius: 0;
+  background: linear-gradient(45deg, #a2979b, #72696d);
+  position: relative;
+  left: 10%;
+}
+section.d-pocketmorty .gameConsole .body .screen {
+  width: 85%;
+  height: 80%;
+  border-radius: 0;
+  border: 5px solid #e7e2e5;
+  position: relative;
+  left: 2%;
+  top: 10%;
+}
+section.d-pocketmorty .gameConsole .body .screen iframe {
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+}
+section.d-pocketmorty .gameConsole .body .decoration {
+  width: 8%;
+  height: 3%;
+  border-radius: 30%;
+  position: relative;
+  left: 90%;
+  top: -20%;
+  background: #413b37;
+  border: 2px solid #000;
+  margin-top: 5px;
+}
+section.d-pocketmorty .gameConsole .body .decoration::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 30%;
+  background: #413b37;
+  border: 2px solid #000;
+  margin-top: -350%;
+}
+section.d-pocketmorty .leftDec {
+  width: 10%;
+  height: 40%;
+  border-radius: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  border: 3px solid #000;
+  background: #38567b;
+  position: absolute;
+  left: -1%;
+  bottom: -1%;
+}
+section.d-pocketmorty .leftDec .line {
+  width: 80%;
+  height: 15%;
+  border-radius: 0;
+  background: #16457b;
+  border: 3px solid #000;
+  border-left: 0px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  margin-top: 6px;
+  box-shadow: inset -1px 1px 5px rgba(255, 255, 255, 0.5);
+}
+section.d-pocketmorty .leftDec::before {
+  content: "";
+  display: block;
+  width: 60%;
+  height: 50%;
+  border-radius: 0;
+  background: #38567b;
+  border: 3px solid #000;
+  box-shadow: inset -1px 1px 5px rgba(255, 255, 255, 0.5);
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  position: absolute;
+  top: -90%;
+  left: -1%;
+}
+section.d-pocketmorty .bottomDec {
+  position: absolute;
+  bottom: -2%;
+  width: 20%;
+  height: 5%;
+  border-radius: 0;
+  background: #38567b;
+  border: 3px solid #000;
+  box-shadow: inset -1px 1px 5px rgba(255, 255, 255, 0.5);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+section.d-pocketmorty .bottomDec::after {
+  content: "";
+  display: block;
+  width: 50%;
+  height: 100%;
+  border-radius: 0;
+  background: #38567b;
+  border: 3px solid #000;
+  box-shadow: inset -1px 1px 5px rgba(255, 255, 255, 0.5);
+  position: absolute;
+  left: 150%;
+  bottom: -2%;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.download {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.download h1 {
+  font-size: 3rem;
+  color: var(--main-color);
+}
+.download h2 {
+  font-size: 2rem;
+}
+.download .appstore .downloadpic {
+  width: 15%;
+  margin: 1rem;
+}
+.download .appstore .downloadpic:hover {
+  transform: scale(1.2);
+}
+
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+  max-height: 60vh;
+  background-color: black;
+  border-top: 1px solid white;
+  padding: 20px;
+}
+footer .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+footer .wrap img {
+  width: 5vw;
+  height: 5vw;
+  margin: 10px 20px;
+}
+footer .wrap h1 {
+  color: #fff;
+  font-size: 2.5rem;
+}
+footer .wrap p {
+  font-size: 20px;
+  color: #fff;
+}
+footer .wrap nav {
+  width: 30%;
+  text-align: center;
+}
+footer .wrap nav ul {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+footer .wrap nav ul li a {
+  color: white;
+  font-weight: 600;
+  font-size: 2rem;
+  flex-basis: 100px;
+}
+footer .wrap .bigpic {
+  width: 20vw;
+  height: 20vw;
+  background-image: url("../images/R_M_logo.png");
+  background-position: center;
+  background-size: cover;
+}
+footer .wrap .links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+footer .wrap .links .wrap {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+}
+footer .wrap .links .wrap p {
+  font-size: 50px;
+  color: #FFF;
+  margin: 5px;
+}
+footer .wrap .links .wrap img {
+  max-width: 2vw;
+  min-width: 35px;
+  max-height: 2vw;
+  min-height: 35px;
+}
