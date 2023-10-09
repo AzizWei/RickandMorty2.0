@@ -2,6 +2,11 @@
 :root {
   --main-color:#40b5cb;
   --sec-color:#62b138;
+  --white-color:#fff;
+  --main-bacco:#051527;
+  --light-bacco:#0a2647;
+  --neon-blue-color:#00ffd1;
+  --neon-green-color:#7cbd28;
 }
 
 html, body {
@@ -16,6 +21,7 @@ html, body {
   background-color: #000;
   position: relative;
   overflow: hidden;
+  padding: 1rem;
 }
 .charactersline .character {
   width: 20vw;
@@ -24,6 +30,7 @@ html, body {
   background-position: center;
   background-size: cover;
   margin: 0 10px;
+  overflow: hidden;
 }
 .charactersline .character:nth-child(1) {
   background-image: url("../images/Characters/RickSanchez/03.png");
@@ -58,15 +65,16 @@ html, body {
 }
 .charactersline .filter .displayContent {
   width: 100%;
-  height: 50%;
+  height: 100%;
   border-radius: 0;
   position: absolute;
-  bottom: 0;
+  top: 0;
   padding: 1rem;
   display: none;
   color: white;
   transition-duration: 0.5s;
   transition-delay: 2s !important;
+  padding: 2rem;
 }
 .charactersline .filter .displayContent h1 {
   font-size: 3rem;
@@ -77,4 +85,59 @@ html, body {
 .charactersline .filter:hover .displayContent {
   background-color: rgba(0, 0, 0, 0.6);
   display: block;
+}
+
+@media screen and (min-width: 1200px) {
+  .charactersline .filter .displayContent {
+    top: 40%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .charactersline {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 1.2rem 0;
+    gap: 1.2rem;
+  }
+  .charactersline .character {
+    width: 95vw;
+    height: 50vw;
+    border-radius: 1rem;
+  }
+  .charactersline .character:hover, .charactersline .character:active {
+    width: 95vw;
+  }
+  .charactersline .filter {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+  }
+  .charactersline .filter .displayContent {
+    padding: 2rem;
+  }
+  .charactersline .filter .displayContent h1 {
+    font-size: 2rem;
+  }
+  .charactersline .filter .displayContent p {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 540px) {
+  .charactersline .filter {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+  }
+  .charactersline .filter .displayContent {
+    padding: 2rem;
+  }
+  .charactersline .filter .displayContent h1 {
+    font-size: 2rem;
+  }
+  .charactersline .filter .displayContent p {
+    font-size: 0.9rem;
+  }
 }

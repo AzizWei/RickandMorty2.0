@@ -9,9 +9,6 @@ $(document).ready(function() {
     fetchAndInsertContent("header.html", "header")
     fetchAndInsertContent("footer.html", "footer")
     
-
-    
-    
     // swiper (index part)
     let imagePaths = []
     let numOfImages = 10 

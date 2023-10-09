@@ -10,6 +10,7 @@
     font-family: 'Bebas Neue', cursive
     text-decoration: none
     list-style: none
+    scroll-behavior: smooth
     // border: 1px solid #f00
 
 body,html
@@ -31,15 +32,14 @@ header
         flex: 4
         img
             width: 8rem
-    
+    #menu
+        color: var(--main-color)
+        font-size: 2.2rem
+        cursor: pointer
+        margin-right: 2rem
+        display: none
     nav
         +flex
-        .menu
-            color: var(--main-color)
-            font-size: 2.2rem
-            cursor: pointer
-            margin-right: 2rem
-            // display: none
         ul
             +flex(space-around)
             li
@@ -124,8 +124,8 @@ section.second
         span
             color: var(--main-color)
         iframe
-            width: 70%
-            height: 60vh
+            width: 90%
+            height: 80vh
 
 #slides
     width: 100%
@@ -144,12 +144,13 @@ section.second
         display: block
         width: 100%
 
+
 #vedio2
     display: none    
 
 section.d-pocketmorty
     +flex
-    +size(80%,500px,0.3rem)
+    +size(90%,500px,0.3rem)
     margin: 
         top: 2rem
         bottom: 5rem
@@ -261,68 +262,112 @@ section.d-pocketmorty
 
 footer
     +flex(space-evenly)
-    max-height: 60vh
     background-color: black
     border-top:1px solid white
     padding:20px
     .wrap
         +flex(center,center,column)
         img
-            width: 5vw
-            height: 5vw
+            +size(5vw)
             margin: 10px 20px
         h1
             color: #fff
             font-size: 2.5rem
+        h2
+            color: #fff
         p
-            font-size: 20px
+            font-size: 1.5rem
             color: #fff
         nav
-                width: 30%
-                text-align: center
+            width: 30%
+            text-align: center
+            ul
+                +flex(space-around,center,column)
+                width: 100%
 
-                ul
-                    display: flex
-                    flex-direction: column
-                    width: 100%
-                    justify-content: space-around
-                    flex-wrap: wrap
-                    li
-                        a
-                            color: white
-                            font-weight: 600
-                            font-size: 2rem
-                            flex-basis: 100px
-            
-        
-    
-
+                li
+                    a
+                        color: white
+                        font-weight: 600
+                        font-size: 2rem
+                        flex-basis: 100px
+                        
         .bigpic
-            width: 20vw
-            height: 20vw
+            +size(20vw)
             background-image: url("../images/R_M_logo.png")
             background-position: center
             background-size: cover
         .links
-            display: flex
-            flex-direction: column
-            align-items: center
+            +flex(center,center,column)
             margin-top: 30px
             .wrap
                 display: flex
                 flex-direction: row
                 margin-top: 20px
                 p
-                    font-size: 50px
-                    color: #FFF
+                    font-size: 1rem
+                    color: #fff
                     margin: 5px
     
-                img
-                    max-width: 2vw
-                    min-width: 35px
-                    max-height: 2vw
-                    min-height: 35px
+                .linkicons
+                    color: #fff
+                    font-size: 1.5rem
+                    margin: 1rem
     
 
 
 
+@media screen and (max-width:1024px)
+    header
+        nav
+            display: flex
+    
+@media screen and (max-width:768px)
+    header
+        +flex(center,center,column)
+        padding: 0.5rem
+        nav
+            display: flex
+            +flex
+            ul
+                margin-top: 0.5rem
+
+    footer
+        +flex(center,center,column)
+
+        .wrap
+            margin-bottom: 2rem
+            h1
+                font-size: 1.8rem 
+            h2
+                font-size: 1.2rem
+            nav
+                ul
+                    +flex(space-around,center,column)
+                    li
+                        a
+                            font-size: 1.5rem
+            img
+                +size(20%)
+
+@media screen and (max-width:540px)
+    header
+        +flex(center,center,row)
+        padding:0.5rem 0 0 0
+        #menu
+            display: block
+            
+        nav#navbar
+            display: none
+            z-index: 8
+            
+            ul
+                +flex(column)
+                +size(100%)
+                
+                li
+                    a
+                        +size(100vw,3rem)
+                        line-height:3rem
+                        margin: 0
+            
